@@ -21,13 +21,24 @@
 // 	})
 // }
 // 哈希
+// var intersection = function (nums1, nums2) {
+// 	if (nums1.length > nums2.length) [nums1, nums2] = [nums2, nums1]
+// 	let hash = new Set(nums1)
+// 	let res = new Set()
+// 	for (let i = 0; i < nums2.length; i++) {
+// 		if (hash.has(nums2[i])) {
+// 			res.add(nums2[i])
+// 		}
+// 	}
+// 	return [...res]
+// }
 var intersection = function (nums1, nums2) {
 	if (nums1.length > nums2.length) [nums1, nums2] = [nums2, nums1]
-	let hash = new Set(nums1)
+	let hash = new Set(nums2)
 	let res = new Set()
-	for (let i = 0; i < nums2.length; i++) {
-		if (hash.has(nums2[i])) {
-			res.add(nums2[i])
+	for (let i = 0; i < nums1.length; i++) {
+		if (hash.has(nums1[i])) {
+			res.add(nums1[i])
 		}
 	}
 	return [...res]
